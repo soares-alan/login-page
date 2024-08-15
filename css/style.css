@@ -1,0 +1,471 @@
+/* 
+    Project: Styles for Login Page
+    Description: Defines the styles for a simple and responsive login page.
+    Components:
+    - Body: Basic settings and alignment of content.
+    - Section: Styling of the main container for the login form.
+    - Sign-in Container: Styling of the login form, including layout and appearance of fields.
+    - Links: Styling for links within the form.
+    - Hover State: Visual effects when hovering over links and the submit button.
+    - Responsiveness: Style adjustments for smaller screens.
+    ========================================================================================================
+
+    Author: Alan S.
+    GitHub: [Your GitHub URL]
+    Creation Date: YYYY-MM-DD
+*/
+
+
+
+/* Eric Meyer's Reset CSS v2.0 - http://meyerweb.com/eric/tools/css/reset/ 
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Basic body settings */
+body {
+    line-height: 1.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Cyberpunk Is Not Dead', sans-serif;
+    background: #000000;
+}
+
+/* Basic section settings */
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Sign-in container styling */
+section .signin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+    border-radius: 6px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    background: #333;
+    width: 400px;
+    z-index: 1000;
+}
+
+/* Content inside the sign-in container */
+section .signin .content {
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Title styling */
+section .signin .content h2 {
+    font-size: 2em;
+    color: #85FF00;
+    text-transform: uppercase;
+    margin: 16px;
+    font-weight: 600;
+}
+
+/* Form styling */
+section .signin .content .form {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    width: 100%;
+}
+
+section .signin .content .inputBx {
+    position: relative;
+    width: 100%;
+}
+
+.inputBx input[type="text"],
+.inputBx input[type="password"],
+.inputBx input[type="submit"] {
+    position: relative;
+    background: #454545;
+    width: 100%;
+    padding: 8px;
+    height: auto;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #fefefa;
+    caret-color: #85FF00;
+    transition: border-color 0.3s, box-shadow 0.3s;
+
+}
+
+.inputBx input:focus {
+    outline: 2px solid #85FF00;
+    outline-offset: 2px;
+    background: #383838;
+
+}
+
+
+/* Label styling */
+.inputBx label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    transition: 0.3s;
+    pointer-events: none;
+    color: #f6f6f6;
+    font-size: 1rem;
+}
+
+/*password reveal icon */
+::-ms-reveal {
+    filter: invert(100%);
+}
+
+
+/* Placeholder styling */
+.inputBx input::placeholder {
+    color: #f6f6f6b2;
+}
+
+/* Label styling when input is focused or filled */
+.inputBx input:focus+label,
+.inputBx input:not(:placeholder-shown)+label {
+    top: -10px;
+    left: 10px;
+    color: #85FF00;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Icon inside input field styling */
+section .signin .content .form .inputBx i {
+    position: absolute;
+    top: 35%;
+    left: 5px;
+    color: #fefefa;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+/* Label styling when input is valid */
+section .signin .content .form .inputBx input:focus~label,
+section .signin .content .form .inputBx input:valid~label {
+    transform: translateY(-18.5px);
+    left: -1.5px;
+    color: #85FF00;
+}
+
+/* Link styling */
+.links {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Styling for all links */
+.links a {
+    color: #f6f6f6;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s;
+}
+
+.links a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #85FF00;
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+}
+
+.links a:hover::before,
+.links a:focus::before {
+    transform: translateX(0);
+}
+
+.links a:hover,
+.links a:focus {
+    color: #85FF00;
+}
+
+/* Styling for the second link */
+.links a:nth-child(2) {
+    color: #85FF00;
+    font-weight: 600;
+}
+
+/* Submit button styling */
+.signin .content .form .inputBx input[type="submit"] {
+    background: #85FF00;
+    color: #111;
+    font-weight: 600;
+    padding: 10px 20px;
+    font-size: 1rem;
+    line-height: 1.5;
+    min-height: 40px;
+    font-family: 'Cyberpunk Is Not Dead', sans-serif;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.signin .content .form .inputBx input[type="submit"]:hover {
+    background: #74e600;
+}
+
+.signin .content .form .inputBx input[type="submit"]:active {
+    background: #6fdd00;
+}
+
+/* Error message styling */
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    section .signin {
+        width: 90%;
+        padding: 16px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    .links a {
+        justify-content: space-around;
+        margin-left: 2%;
+        font-size: 0.8rem;
+    }
+
+    section .signin .content .form .inputBx input:focus~label,
+    section .signin .content .form .inputBx input:valid~label {
+        transform: translateY(-18.5px);
+        left: 6.5px;
+        color: #85FF00;
+    }
+
+    .inputBx label {
+        left: 30px;
+    }
+
+    .inputBx input {
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+    .signin .content .form {
+        gap: 20px;
+    }
+
+    .signin .content .form .inputBx input[type="submit"] {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 400px) {
+    section .signin {
+        width: 90%;
+        padding: 16px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    .links a {
+        justify-content: space-around;
+        margin-left: 2%;
+        font-size: 0.8rem;
+    }
+
+    .inputBx label {
+        left: 30px;
+    }
+
+    .inputBx input {
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+    .signin .content .form {
+        gap: 20px;
+    }
+}
+
+
+
+/* Media query for large screens
+@media (min-width: 1200px) {
+    section .signin {
+        width: 50%;
+        padding: 40px;
+    }
+
+    .signin .content {
+        width: 80%;
+        gap: 50px;
+    }
+
+    .signin .content .form .inputBx input[type="submit"] {
+        font-size: 1.2rem;
+        padding: 12px 24px;
+    }
+
+    .inputBx input {
+        font-size: 1.1rem;
+    }
+
+    .links a {
+        font-size: 1.1rem;
+    }
+
+    section .signin .content h2 {
+        font-size: 2.5em;
+    }
+}

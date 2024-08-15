@@ -1,0 +1,67 @@
+<!--
+    Project: Login Page
+    Description: This page provides a simple and responsive login form.
+    Components:
+    - Header: Displays the title of the login page.
+    - Form: Includes fields for username and password.
+    - Submit Button: Submits the form.
+    - Links: Password recovery and new user registration links.
+    ========================================================================================================
+
+    Author: Alan S.
+    GitHub: [Your GitHub URL]
+    Creation Date: YYYY-MM-DD
+-->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.cdnfonts.com/css/cyberpunk-is-not-dead" rel="stylesheet">
+    <!-- Para dispositivos Android -->
+    <meta name="theme-color" content="#85FF00">
+    <!-- Opções: default, black, black-translucent -->
+    <script src="/js/scripts.js" defer></script>
+    <title>Login Page</title>
+</head>
+
+<body>
+    <section>
+        <!-- Sign In -->
+        <div class="signin">
+            <!-- Sign Content -->
+            <div class="content">
+                <h2>Sign In</h2>
+                <!-- form  -->
+                <form class="form">
+                    <!-- input box -->
+                    <div class="inputBx">
+                        <input type="text" id="username" placeholder=" " required>
+                        <label for="username">Username</label>
+                    </div>
+                    <div class="inputBx">
+                        <input type="password" id="password" placeholder=" " required>
+                        <label for="password">Password</label>
+                    </div>
+                    <!-- Links -->
+                    <nav class="links">
+                        <a href="#">Forgot Password?</a>
+                        <a href="#">Sign Up</a>
+                    </nav>
+                    <div class="inputBx">
+                        <!-- Login Button -->
+                        <input type="submit" value="Login">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
