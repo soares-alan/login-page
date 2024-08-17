@@ -136,8 +136,6 @@ q {
     quotes: none;
 }
 
-
-
 blockquote:before,
 blockquote:after,
 q:before,
@@ -151,6 +149,28 @@ table {
     border-spacing: 0;
 }
 
+/* Text Shadow */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+span {
+    text-shadow:
+        -1px -1px 0 #000000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+
+
+/* Background */
+main span {}
+
+
 /* Basic body settings */
 body {
     line-height: 1.5;
@@ -161,6 +181,8 @@ body {
     font-family: 'Cyberpunk Is Not Dead', sans-serif;
     background: #000000;
 }
+
+
 
 /* Basic section settings */
 section {
@@ -179,11 +201,14 @@ section .signin {
     align-items: center;
     padding: 32px;
     border-radius: 6px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 15px 30px rgba(0, 255, 0, 0.575);
     background: #333;
     width: 400px;
-    z-index: 1000;
+    /* INDEX 
+    z-index: 1000;*/
 }
+
+/* Border letters */
 
 /* Content inside the sign-in container */
 section .signin .content {
@@ -224,7 +249,7 @@ section .signin .content .inputBx {
     background: #454545;
     width: 100%;
     padding: 8px;
-    height: auto;
+
     border: none;
     outline: none;
     border-radius: 4px;
@@ -242,6 +267,7 @@ section .signin .content .inputBx {
     outline-offset: 2px;
     background: #383838;
 
+
 }
 
 
@@ -253,14 +279,30 @@ section .signin .content .inputBx {
     transform: translateY(-50%);
     transition: 0.3s;
     pointer-events: none;
-    color: #f6f6f6;
+    color: #f6f6f6be;
     font-size: 1rem;
+
+}
+
+/* remove default password reveal icon */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+    display: none;
 }
 
 /*password reveal icon */
-::-ms-reveal {
-    filter: invert(100%);
+.inputBx i.toggle-password {
+    display: flex;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #fefefa;
+    text-shadow: 0 0 5px #000000;
+    /* Adiciona um contorno ao redor do ícone */
 }
+
 
 
 /* Placeholder styling */
@@ -278,22 +320,17 @@ section .signin .content .inputBx {
     font-weight: 500;
 }
 
-/* Icon inside input field styling */
-section .signin .content .form .inputBx i {
-    position: absolute;
-    top: 35%;
-    left: 5px;
-    color: #fefefa;
-    transition: 0.5s;
-    pointer-events: none;
-}
-
 /* Label styling when input is valid */
 section .signin .content .form .inputBx input:focus~label,
 section .signin .content .form .inputBx input:valid~label {
     transform: translateY(-18.5px);
     left: -1.5px;
     color: #85FF00;
+    text-shadow:
+        -1px -1px 0 #000000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
 }
 
 /* Link styling */
@@ -369,8 +406,26 @@ section .signin .content .form .inputBx input:valid~label {
     margin-top: 5px;
 }
 
+
+
+
 /* Responsive adjustments */
 @media (max-width: 600px) {
+    body {
+        overflow: hidden;
+    }
+
+    .inputBx i.toggle-password {
+        display: flex;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #fefefa;
+    }
+
+
     section .signin {
         width: 90%;
         padding: 16px;
@@ -378,11 +433,15 @@ section .signin .content .form .inputBx input:valid~label {
         box-sizing: border-box;
     }
 
+
+
     .links a {
         justify-content: space-around;
         margin-left: 2%;
         font-size: 0.8rem;
     }
+
+    /* Input field icon - SELECT */
 
     section .signin .content .form .inputBx input:focus~label,
     section .signin .content .form .inputBx input:valid~label {
@@ -391,13 +450,20 @@ section .signin .content .form .inputBx input:valid~label {
         color: #85FF00;
     }
 
-    .inputBx label {
-        left: 30px;
+    /* Input field icon - RETURN */
+    section .signin .content .form .inputBx input:not(:focus):not(:valid)~label {
+        position: absolute;
+        top: 50%;
+        left: 16px;
+        transform: translateY(-50%);
+        color: #f6f6f6b2;
+
     }
 
-    .inputBx input {
-        margin-left: 8px;
-        margin-right: 8px;
+
+
+    .inputBx label {
+        left: 30px;
     }
 
     .signin .content .form {
@@ -408,6 +474,8 @@ section .signin .content .form .inputBx input:valid~label {
         font-size: 0.9rem;
         padding: 8px 16px;
     }
+
+
 }
 
 @media (max-width: 400px) {
@@ -417,6 +485,19 @@ section .signin .content .form .inputBx input:valid~label {
         margin: 0 auto;
         box-sizing: border-box;
     }
+
+
+
+    .inputBx i.toggle-password {
+        display: flex;
+        position: absolute;
+        right: 10px;
+        top: center;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #fefefa;
+    }
+
 
     .links a {
         justify-content: space-around;
@@ -428,16 +509,13 @@ section .signin .content .form .inputBx input:valid~label {
         left: 30px;
     }
 
-    .inputBx input {
-        margin-left: 8px;
-        margin-right: 8px;
-    }
+
 
     .signin .content .form {
         gap: 20px;
     }
-}
 
+}
 
 
 /* Media query for large screens

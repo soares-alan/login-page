@@ -9,7 +9,7 @@
     ========================================================================================================
 
     Author: Alan S.
-    GitHub: [Your GitHub URL]
+    GitHub: https://github.com/soares-alan
     Creation Date: YYYY-MM-DD
 -->
 
@@ -22,46 +22,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link href="https://fonts.cdnfonts.com/css/cyberpunk-is-not-dead" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Para dispositivos Android -->
     <meta name="theme-color" content="#85FF00">
     <!-- Opções: default, black, black-translucent -->
-    <script src="./js/scripts.js" defer></script>
+
     <title>Login Page</title>
 </head>
 
 <body>
-    <section>
-        <!-- Sign In -->
-        <div class="signin">
-            <!-- Sign Content -->
-            <div class="content">
-                <h2>Sign In</h2>
-                <!-- form  -->
-                <form class="form">
-                    <!-- input box -->
-                    <div class="inputBx">
-                        <input type="text" id="username" placeholder=" " required>
-                        <label for="username">Username</label>
-                    </div>
-                    <div class="inputBx">
-                        <input type="password" id="password" placeholder=" " required>
-                        <label for="password">Password</label>
-                    </div>
-                    <!-- Links -->
-                    <nav class="links">
-                        <a href="#">Forgot Password?</a>
-                        <a href="#">Sign Up</a>
-                    </nav>
-                    <div class="inputBx">
-                        <!-- Login Button -->
-                        <input type="submit" value="Login">
-                    </div>
-                </form>
+    <main>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <section>
+            <!-- Sign In -->
+            <div class="signin">
+                <!-- Sign Content -->
+                <div class="content">
+                    <h2>Sign In</h2>
+                    <!-- form  -->
+                    <form class="form">
+                        <!-- input box -->
+                        <div class="inputBx">
+                            <!--Username-->
+                            <input type="text" id="username" placeholder=" " required aria-required="true">
+                            <label for="username">Username</label>
+
+                        </div>
+                        <!--Password-->
+                        <div class="inputBx">
+                            <input type="password" id="password" placeholder=" " required>
+                            <label for="password">Password</label>
+                            <i class="fas fa-eye toggle-password" aria-label="Show Password"
+                                onclick="togglePassword()"></i>
+                        </div>
+
+                        <!-- Links -->
+                        <nav class=" links">
+                            <a href="#">Forgot Password?</a>
+                            <a href="#">Sign Up</a>
+                        </nav>
+                        <div class="inputBx">
+                            <!-- Login Button -->
+                            <input type="submit" value="Login">
+                        </div>
+                    </form>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+
+    </main>
+    <script src="/js/scripts.js" defer></script>
 </body>
 
 </html>

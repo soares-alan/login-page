@@ -1,3 +1,4 @@
+// Placeholder
 document.addEventListener('DOMContentLoaded', function () {
     var inputs = document.querySelectorAll('.inputBx input');
 
@@ -26,4 +27,19 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// Reveal Icon
+function togglePassword() {
+    var passwordField = document.getElementById("password");
+    var passwordFieldType = passwordField.getAttribute("type");
+    var toggleIcon = document.querySelector(".toggle-password");
 
+    if (passwordFieldType === "password") {
+        passwordField.setAttribute("type", "text");
+        toggleIcon.classList.remove("fa-eye");
+        toggleIcon.classList.add("fa-eye-slash");
+    } else {
+        passwordField.setAttribute("type", "password");
+        toggleIcon.classList.remove("fa-eye-slash");
+        toggleIcon.classList.add("fa-eye");
+    }
+}
