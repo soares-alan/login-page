@@ -43,3 +43,12 @@ function togglePassword() {
         toggleIcon.classList.add("fa-eye");
     }
 }
+
+// Background Animation
+const container = document.querySelector('.span-container');
+const spanCount = 500; // Span Numbers
+
+for (let i = 0; i < spanCount; i++) {
+    const span = document.createElement('span');
+    container.appendChild(span);
+}

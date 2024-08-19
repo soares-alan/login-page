@@ -157,8 +157,7 @@ h3,
 h4,
 h5,
 h6,
-a,
-span {
+a {
     text-shadow:
         -1px -1px 0 #000000,
         1px -1px 0 #000,
@@ -167,11 +166,7 @@ span {
 }
 
 
-/* Background */
-main span {}
-
-
-/* Basic body settings */
+/* Basic body settings - OK */
 body {
     line-height: 1.5;
     display: flex;
@@ -180,22 +175,40 @@ body {
     min-height: 100vh;
     font-family: 'Cyberpunk Is Not Dead', sans-serif;
     background: #000000;
+
 }
 
+
+/* Background Animated  */
+section span {
+    position: relative;
+    display: block;
+    background: #1e1f1c;
+    width: calc(6.25vw - 2px);
+    height: calc(6.25vw - 2px);
+    z-index: 1;
+}
 
 
 /* Basic section settings */
 section {
+    flex-wrap: wrap;
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     width: 100vw;
     height: 100vh;
+    gap: 2px;
+    overflow: hidden;
+    /* Garante que o conteúdo do fundo não transborde */
 }
 
 /* Sign-in container styling */
 section .signin {
+    position: absolute;
+    z-index: 2;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -204,8 +217,6 @@ section .signin {
     box-shadow: 0 15px 30px rgba(0, 255, 0, 0.575);
     background: #333;
     width: 400px;
-    /* INDEX 
-    z-index: 1000;*/
 }
 
 /* Border letters */
