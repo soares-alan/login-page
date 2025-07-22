@@ -65,6 +65,10 @@ This login screen can serve as:
 
 <img src="https://i.imgur.com/R2gqPBS.gif" alt="Cyberpunk Login Demo" width="600"/>
 
+## 🌐 Live Deployment
+
+[![Live Site](https://img.shields.io/badge/View-Live_Site-2ea44f?style=for-the-badge)](https://soares-alan.github.io/login-page/)
+
 ## 📬 Let's Connect
 
 <div align="center">
